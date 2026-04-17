@@ -8,8 +8,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen.svg?style=for-the-badge)](https://github.com/Siddiqahmed26/zero-gravity-dev)
 
-> *Clone → Setup → Build.* Your AI tools, agent skills, and project management — unified into one ultra-fast, portable workspace. Never configure an AI IDE from scratch again.
-
 <br/>
 
 **[ Cursor ]** &nbsp; · &nbsp; **[ Windsurf ]** &nbsp; · &nbsp; **[ Antigravity ]** &nbsp; · &nbsp; **[ VS Code ]**
@@ -17,6 +15,10 @@
 <br/>
 
 </div>
+
+> [!IMPORTANT]
+> ### 🚀 Clone → Setup → Build.
+> Your AI tools, agent skills, and project management — unified into one ultra-fast, portable workspace. **Never configure an AI IDE from scratch again.**
 
 ---
 
