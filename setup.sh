@@ -64,6 +64,35 @@ else
     echo "  ⚠ Graph build had issues (this is OK for empty projects)"
 fi
 
+# --- Step 5: Install zg-init command ---
+echo "[5/5] Installing zg-init terminal command..."
+SHELL_RC=""
+if [ -f "$HOME/.zshrc" ]; then
+    SHELL_RC="$HOME/.zshrc"
+elif [ -f "$HOME/.bashrc" ]; then
+    SHELL_RC="$HOME/.bashrc"
+fi
+
+if [ -n "$SHELL_RC" ]; then
+    if grep -q "function zg-init" "$SHELL_RC"; then
+        echo "  ✓ 'zg-init' already installed"
+    else
+        cat >> "$SHELL_RC" << EOF
+
+# Zero Gravity Dev initialization command
+function zg-init() {
+    echo "🚀 Initializing Zero Gravity Workspace..."
+    cp -R "$SCRIPT_DIR/.gsd" "$SCRIPT_DIR/.agents" "$SCRIPT_DIR/.agent" . 2>/dev/null || true
+    cp "$SCRIPT_DIR/AGENTS.md" "$SCRIPT_DIR/GEMINI.md" "$SCRIPT_DIR/PROJECT_RULES.md" "$SCRIPT_DIR/GSD-STYLE.md" "$SCRIPT_DIR/.mcp.json" . 2>/dev/null || true
+    echo "✅ Done! Zero Gravity is fully active in this folder."
+}
+EOF
+        echo "  ✓ 'zg-init' added to $SHELL_RC (restart your terminal to use it)"
+    fi
+else
+    echo "  ⚠ Could not detect ~/.bashrc or ~/.zshrc to install 'zg-init'"
+fi
+
 # --- Done ---
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -74,6 +103,7 @@ echo "  Open this folder in your IDE and start building."
 echo ""
 echo "  Quick commands:"
 echo "    /new-project  — Start a new project with GSD"
+echo "    zg-init       — Use in NEW folders to instantly copy AI config"
 echo "    /help         — See all available commands"
 echo "    /plan         — Plan your project phases"
 echo "    /execute      — Execute a phase"
