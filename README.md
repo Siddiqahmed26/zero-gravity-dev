@@ -95,27 +95,37 @@ chmod +x setup.sh && ./setup.sh
 
 Once the global setup is complete, you **never need to clone this repository again.** 
 
-Whenever you want to build a new app (React, Python, Node, etc.), just use the magic command to instantly inject the AI configuration into your project:
+Whenever you want to build a new app (React, Python, Node, etc.), just use the magic command to instantly inject the AI configuration into your project.
 
-<br>
-<h1 align="center"><code>zg-init</code></h1>
-<br>
+<div align="center">
+  <br>
+  <h3>✨ The Magic Command ✨</h3>
+  <img src="https://img.shields.io/badge/terminal-%24_zg--init-000000?style=for-the-badge&logo=gnometerminal&logoColor=white" alt="zg-init command" />
+  <br><br>
+</div>
 
+### 1️⃣ Create your app folder
+Start by making a fresh directory for your new project.
 ```bash
-# 1. Create a brand new folder for your app
-mkdir my-new-app
-cd my-new-app
+mkdir my-new-app && cd my-new-app
+```
 
-# 2. Inject the Zero Gravity AI tools (Takes 1 second)
+### 2️⃣ Inject Zero Gravity
+Run the magic command to instantly populate the AI workspace, agents, and GSD workflows into your folder. *(Takes < 1 second)*
+```bash
 zg-init
+```
 
-# 3. Initialize your actual framework (Optional)
+### 3️⃣ Add your favorite framework *(Optional)*
+Initialize React, Vue, Django, Rust, or whatever stack you want right on top of it!
+```bash
 npx create-vite@latest ./
 # or: django-admin startproject myapp .
 # or: cargo init
 ```
 
-Now, open this folder in your AI IDE and type `/new-project` in the chat to begin planning!
+> **🎉 You're Ready!** 
+> Open this folder in your AI IDE (like Cursor, Windsurf, or Antigravity) and type `/new-project` in the chat to begin planning.
 
 ---
 
