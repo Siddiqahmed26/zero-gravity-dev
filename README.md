@@ -26,7 +26,7 @@ Every time you start a new project or switch machines, you lose hours configurin
 
 ```mermaid
 flowchart TD
-    User([💻 Developer]) -->|Runs zg-init| ZG{🌌 Zero Gravity Workspace}
+    User([💻 Developer]) -->|Runs zg-init| ZG[🌌 Zero Gravity Workspace]
     
     ZG --> CRG[(🔬 Code Review Graph)]
     ZG --> Skills[🧠 11 Agent Skills]
@@ -48,17 +48,16 @@ Get Shit Done — a methodology that turns vague ideas into executable roadmaps.
 
 ---
 
-## ⚡ 30-Second Global Installation
+## ⚡ Step 1: One-Time Global Setup
 
-Run this **once** on your machine to install the core graph engine and terminal tools.
+Run this **exactly once** on your machine to install the global tools and register the `zg-init` command.
 
 ```bash
-# 1. Clone the master workspace
+# Clone the master workspace anywhere on your PC
 git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
 cd zero-gravity-dev
-
-# 2. Run the automated installer
 ```
+
 <details>
 <summary><b>🪟 Windows Users</b> <i>(Click to expand)</i></summary>
 
@@ -77,25 +76,27 @@ chmod +x setup.sh && ./setup.sh
 
 ---
 
-## 🌌 The `zg-init` Workflow
+## 🌌 Step 2: Creating a New Project 
 
-Once installed, you never need to clone this repository again. We've injected a permanent `zg-init` command into your system. 
+Once the global setup is complete, you **never need to clone this repository again.** 
 
-Whenever you start a new project:
+Whenever you want to build a new app (React, Python, Node, etc.), just use the `zg-init` command to instantly inject the AI configuration into your project.
 
-```mermaid
-sequenceDiagram
-    participant D as Developer
-    participant T as Terminal
-    participant W as Workspace
-    
-    D->>T: mkdir new-app && cd new-app
-    D->>T: zg-init
-    T->>W: Injects AGENTS.md, .mcp.json, .gsd/
-    W-->>D: Workspace is now AI-Ready 🚀
+```bash
+# 1. Create a brand new folder for your app
+mkdir my-new-app
+cd my-new-app
+
+# 2. Inject the Zero Gravity AI tools (Takes 1 second)
+zg-init
+
+# 3. Initialize your actual framework (Optional)
+npx create-vite@latest ./
+# or: django-admin startproject myapp .
+# or: cargo init
 ```
 
-Open the folder in your IDE, and tell your AI: `/new-project`.
+Now, open this folder in your AI IDE and type `/new-project` in the chat to begin planning!
 
 ---
 
