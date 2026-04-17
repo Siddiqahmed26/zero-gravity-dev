@@ -1,9 +1,32 @@
 # ==============================================
-# Antigravity Ultimate Stack - .gitignore
+# Zero Gravity Dev - .gitignore
 # ==============================================
 
-# --- Code Review Graph (auto-generated DB) ---
-.code-review-graph/graph.db
+# --- Code Review Graph runtime (auto-generated per machine) ---
+# CRG creates this folder at runtime to store the graph database.
+# It rebuilds automatically — never commit it.
+.code-review-graph/
+
+# --- CRG build artifacts (inside bundled source) ---
+code-review-graph/__pycache__/
+code-review-graph/**/__pycache__/
+code-review-graph/*.py[cod]
+code-review-graph/*.egg-info/
+code-review-graph/dist/
+code-review-graph/build/
+code-review-graph/.eggs/
+code-review-graph/.venv/
+code-review-graph/.pytest_cache/
+code-review-graph/.mypy_cache/
+code-review-graph/.coverage
+code-review-graph/htmlcov/
+code-review-graph/code-review-graph-vscode/dist/
+code-review-graph/code-review-graph-vscode/node_modules/
+code-review-graph/*.vsix
+code-review-graph/*.db
+code-review-graph/*.db-journal
+code-review-graph/*.db-wal
+code-review-graph/*.db-shm
 
 # --- OS files ---
 Thumbs.db
@@ -22,13 +45,10 @@ ehthumbs.db
 *.swo
 *~
 
-# --- Node (if any project uses it) ---
+# --- Node ---
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# --- Python (if any project uses it) ---
+# --- Python ---
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -41,8 +61,3 @@ venv/
 
 # --- Logs ---
 *.log
-
-# --- Antigravity App Data (user-specific, not portable) ---
-# Brain data, conversation logs, and knowledge items are stored
-# in the Antigravity app data directory (~/.gemini/antigravity/),
-# NOT in this repo. No need to gitignore them here.

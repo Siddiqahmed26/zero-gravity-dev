@@ -14,7 +14,7 @@ This repository is a **pre-configured AI workspace** that works with any AI-powe
 |--------|---------|-----------|
 | **GSD (Get Shit Done)** | Structured project management with AI — specs, roadmaps, phased execution, and verification | `.gsd/`, `.agent/workflows/` |
 | **Agent Skills** | Specialized AI agent behaviors — debugging, planning, context management, and more | `.agents/skills/` |
-| **Code Review Graph** | Persistent code knowledge graph for token-efficient, context-aware code reviews | `.code-review-graph/` |
+| **Code Review Graph** | Persistent code knowledge graph for token-efficient, context-aware code reviews | `code-review-graph/` |
 
 **The idea is simple:** instead of re-configuring your AI development environment every time you switch machines or IDEs, you just `git pull` this repo and everything is ready to go.
 
@@ -127,9 +127,20 @@ zero-gravity-dev/
 │   ├── examples/              # 4 workflow examples & references
 │   └── phases/                # Phase-specific plan files (created during work)
 │
-└── .code-review-graph/        # Code Review Graph (auto-generated)
-    ├── .gitignore              # Excludes generated database files
-    └── graph.db                # ⚠️ Auto-generated, NOT committed to git
+├── code-review-graph/          # 🔍 CRG Source Code (Python + TypeScript)
+│   ├── code_review_graph/      # Core Python package (parser, graph, analysis)
+│   ├── code-review-graph-vscode/ # VS Code extension (TypeScript)
+│   ├── docs/                   # Documentation & guides
+│   ├── hooks/                  # Git hooks for auto-updating the graph
+│   ├── skills/                 # CRG-specific agent skills
+│   ├── tests/                  # Test suite
+│   ├── pyproject.toml          # Python package config
+│   └── README.md               # CRG documentation
+│
+└── .mcp.json                   # MCP server config (auto-discovered by IDEs)
+
+# Generated at runtime (gitignored):
+# .code-review-graph/graph.db   # ⚠️ Auto-generated per machine, never committed
 ```
 
 ---
@@ -145,22 +156,29 @@ zero-gravity-dev/
    - [Antigravity](https://antigravity.dev)
    - Any IDE that supports MCP servers and agent instructions
 2. **Git** installed and configured
-3. **MCP Server: code-review-graph** — installed and configured in your IDE's MCP settings
+3. **Python 3.10+** — required for Code Review Graph
 
 ### Step-by-Step Setup
 
 ```bash
 # 1. Clone this repo to your preferred location
 git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
+cd zero-gravity-dev
 
-# 2. Open the folder in your AI-powered IDE
+# 2. Install Code Review Graph from the bundled source
+pip install ./code-review-graph
+
+# 3. Build the knowledge graph for the first time
+crg build
+
+# 4. Open the folder in your AI-powered IDE
 #    → File > Open Folder > select "zero-gravity-dev"
 
-# 3. The workspace will auto-detect:
+# 5. The workspace will auto-detect:
 #    - AGENTS.md / GEMINI.md as agent instructions
 #    - GSD workflows (available as /slash commands in supported IDEs)
 #    - Agent Skills (loaded based on IDE support)
-#    - Code Review Graph will rebuild on first use
+#    - Code Review Graph MCP server (configure in IDE settings)
 ```
 
 ### IDE-Specific Notes
@@ -277,11 +295,32 @@ git push origin main
 
 ## ⚙️ MCP Server Configuration
 
-The **code-review-graph** MCP server must be configured in your IDE's MCP settings. This is a one-time setup per machine.
+The **code-review-graph** MCP server is **bundled in this repo** — no need to install it separately. After running `pip install ./code-review-graph`, the MCP server is ready.
 
-Refer to the [code-review-graph documentation](https://github.com/nicobailey/code-review-graph) for installation instructions.
+A `.mcp.json` is already included at the project root and will be **auto-discovered** by most IDEs:
 
-Once installed, the `AGENTS.md` and `GEMINI.md` files in this repo automatically instruct the AI to use the graph tools first for code exploration, impact analysis, and reviews.
+```json
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "code-review-graph",
+      "args": ["serve"]
+    }
+  }
+}
+```
+
+### IDE-Specific Notes
+
+| IDE | MCP Discovery |
+|-----|---------------|
+| **Cursor** | Auto-reads `.mcp.json` from project root ✅ |
+| **Windsurf** | Auto-reads `.mcp.json` from project root ✅ |
+| **Claude Code** | Auto-reads `.mcp.json` from project root ✅ |
+| **VS Code** | Configure via your AI extension's MCP settings, or install the bundled extension from `code-review-graph/code-review-graph-vscode/` |
+| **Antigravity** | Auto-detected from `AGENTS.md` instructions ✅ |
+
+Once configured, the `AGENTS.md` and `GEMINI.md` files in this repo automatically instruct the AI to use the graph tools first for code exploration, impact analysis, and reviews.
 
 ---
 
@@ -305,11 +344,12 @@ Or manually:
 
 | Committed (in this repo) | Local Only (per machine) |
 |--------------------------|--------------------------|
-| GSD workflows & skills | `.code-review-graph/graph.db` (auto-regenerated) |
+| GSD workflows & skills | `.code-review-graph/` runtime database (auto-regenerated) |
+| CRG source code (`code-review-graph/`) | Python virtual environments |
 | Templates & examples | IDE app data & settings |
 | Project rules & style | Conversation history & chat logs |
 | SPEC, ROADMAP, STATE | Node modules, build artifacts |
-| AGENTS.md / GEMINI.md | Machine-specific configs |
+| AGENTS.md / GEMINI.md / .mcp.json | Machine-specific configs |
 
 ---
 
