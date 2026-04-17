@@ -25,24 +25,16 @@
 Every time you start a new project or switch machines, you lose hours configuring AI behavior, MCP servers, and project tracking. **Zero Gravity Dev solves this by unifying three state-of-the-art open-source systems:**
 
 ```mermaid
-graph LR
-    User[💻 Developer] -->|1. Runs zg-init| ZG[🌌 Zero Gravity Workspace]
+flowchart TD
+    User([💻 Developer]) -->|Runs zg-init| ZG{🌌 Zero Gravity Workspace}
     
-    subgraph The Core Engine
-        ZG --> CRG[(🔬 Code Review Graph)]
-        ZG --> Skills[🧠 11 Agent Skills]
-        ZG --> GSD[📋 GSD Workflows]
-    end
+    ZG --> CRG[(🔬 Code Review Graph)]
+    ZG --> Skills[🧠 11 Agent Skills]
+    ZG --> GSD[📋 GSD Workflows]
     
-    CRG -.->|Builds AST Graph| Skills
-    Skills -.->|Context-Aware Execution| GSD
-    GSD -.->|Structured Code Delivery| User
-    
-    style User fill:#1f2328,stroke:#d0d7de,stroke-width:2px,color:#fff
-    style ZG fill:#2e1065,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style CRG fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
-    style Skills fill:#701a75,stroke:#d946ef,stroke-width:2px,color:#fff
-    style GSD fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    CRG -.->|AST Context| Skills
+    Skills -.->|Token Discipline| GSD
+    GSD -.->|Structured Code| Shipped([✅ Shipped Feature])
 ```
 
 ### 1. 🔬 Code Review Graph (Your AI's Memory)
