@@ -1,6 +1,6 @@
 # 🚀 Zero Gravity Dev
 
-> **A portable AI-powered development workspace** — clone it on any machine, open it in [Antigravity](https://antigravity.dev), and start building with your full AI workflow instantly.
+> **A portable, IDE-agnostic AI development workspace** — clone it on any machine, open it in your favorite AI-powered IDE, and start building with your full workflow instantly.
 >
 > *By Siddiq Ahmed*
 
@@ -8,15 +8,81 @@
 
 ## What Is This?
 
-This repository is a **pre-configured AI workspace** designed for the [Antigravity IDE](https://antigravity.dev). It bundles together three powerful AI-assisted development systems into a single, portable stack:
+This repository is a **pre-configured AI workspace** that works with any AI-powered IDE — **VS Code, Cursor, Windsurf, Antigravity**, or anything that supports agent instructions and MCP servers. It bundles three powerful systems into one portable stack:
 
-| Plugin | Purpose | Directory |
+| System | Purpose | Directory |
 |--------|---------|-----------|
 | **GSD (Get Shit Done)** | Structured project management with AI — specs, roadmaps, phased execution, and verification | `.gsd/`, `.agent/workflows/` |
 | **Agent Skills** | Specialized AI agent behaviors — debugging, planning, context management, and more | `.agents/skills/` |
 | **Code Review Graph** | Persistent code knowledge graph for token-efficient, context-aware code reviews | `.code-review-graph/` |
 
-**The idea is simple:** instead of re-configuring your AI development environment every time you switch machines, you just `git pull` this repo and everything is ready to go.
+**The idea is simple:** instead of re-configuring your AI development environment every time you switch machines or IDEs, you just `git pull` this repo and everything is ready to go.
+
+---
+
+## 💰 How This Stack Saves Tokens (and Money)
+
+One of the core design principles of this workspace is **aggressive token efficiency**. AI models charge per token — the less you waste, the more you can build. Here's how each component contributes:
+
+### The Problem
+
+Most AI coding assistants waste tokens by:
+- Reading entire files when only 5 lines are relevant
+- Losing context between sessions and re-reading everything
+- Using expensive reasoning models for trivial tasks
+- Having no memory of what was already understood
+
+### How Zero Gravity Dev Solves It
+
+#### 🔍 Code Review Graph — Search Instead of Read
+
+Instead of dumping entire files into the AI's context window:
+
+| Without CRG | With CRG |
+|-------------|----------|
+| "Read `auth.ts` (500 lines)" = **~2,000 tokens** | `query_graph callers_of login` = **~100 tokens** |
+| "Read all files that import auth" = **~10,000 tokens** | `get_impact_radius auth.ts` = **~300 tokens** |
+| "Find what tests cover this function" = **~5,000 tokens** | `query_graph tests_for login` = **~100 tokens** |
+
+**Result:** Up to **95% fewer tokens** for code exploration tasks.
+
+#### 🧠 Agent Skills — Context Discipline
+
+| Skill | How It Saves Tokens |
+|-------|---------------------|
+| **context-fetch** | Search-first strategy — grep before reading files. Never loads a full file when a snippet will do |
+| **context-compressor** | After understanding a file, creates a compressed summary. References the summary instead of re-reading |
+| **context-health-monitor** | Monitors context usage (0-30% = peak, 70%+ = degraded). Triggers state dumps before quality drops |
+| **token-budget** | Estimates token cost before execution. Warns if a plan will exceed budget and suggests splitting |
+
+#### 🎯 GSD — Smart Model Routing via Task Effort
+
+GSD tags every task with an `effort` level, enabling smart model selection:
+
+```xml
+<task type="auto" effort="low">     <!-- Fast/cheap model (formatting, simple edits) -->
+<task type="auto" effort="medium">  <!-- Standard model (typical implementation) -->
+<task type="auto" effort="high">    <!-- Reasoning model (complex logic) -->
+<task type="auto" effort="max">     <!-- Deep reasoning (architecture, security) -->
+```
+
+| Effort | Recommended Model | Cost per 1M tokens (approx.) |
+|--------|-------------------|------------------------------|
+| `low` | Claude Haiku / GPT-4o Mini | ~$0.25 |
+| `medium` | Claude Sonnet / GPT-4o | ~$3.00 |
+| `high` | Claude Opus / GPT-4 | ~$15.00 |
+| `max` | Claude Opus (extended thinking) / o1 | ~$15.00+ |
+
+**By matching model power to task complexity, you avoid burning $15/M tokens on a task that a $0.25 model handles perfectly.**
+
+#### 📊 Real-World Token Savings
+
+| Scenario | Traditional Approach | Zero Gravity Dev | Savings |
+|----------|---------------------|------------------|---------|
+| Code review (10 files) | ~50,000 tokens | ~5,000 tokens | **90%** |
+| Debug session | ~30,000 tokens | ~8,000 tokens | **73%** |
+| Resume after break | ~20,000 tokens (re-read everything) | ~2,000 tokens (STATE.md) | **90%** |
+| Plan 5-phase project | ~40,000 tokens | ~15,000 tokens | **62%** |
 
 ---
 
@@ -72,43 +138,54 @@ zero-gravity-dev/
 
 ### Prerequisites
 
-1. **[Antigravity IDE](https://antigravity.dev)** installed on your machine
+1. **An AI-powered IDE** — any of the following:
+   - [VS Code](https://code.visualstudio.com/) + AI extension (Copilot, Continue, Cline, etc.)
+   - [Cursor](https://cursor.sh/)
+   - [Windsurf](https://codeium.com/windsurf)
+   - [Antigravity](https://antigravity.dev)
+   - Any IDE that supports MCP servers and agent instructions
 2. **Git** installed and configured
-3. **MCP Server: code-review-graph** — installed and configured in Antigravity settings
+3. **MCP Server: code-review-graph** — installed and configured in your IDE's MCP settings
 
 ### Step-by-Step Setup
 
 ```bash
-# 1. Clone this repo to your Desktop (or wherever you prefer)
+# 1. Clone this repo to your preferred location
 git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
 
-# 2. Open the folder in Antigravity IDE
+# 2. Open the folder in your AI-powered IDE
 #    → File > Open Folder > select "zero-gravity-dev"
 
 # 3. The workspace will auto-detect:
-#    - GSD workflows (available as /slash commands)
-#    - Agent Skills (auto-loaded by Antigravity)
-#    - AGENTS.md & GEMINI.md (loaded as AI instructions)
+#    - AGENTS.md / GEMINI.md as agent instructions
+#    - GSD workflows (available as /slash commands in supported IDEs)
+#    - Agent Skills (loaded based on IDE support)
 #    - Code Review Graph will rebuild on first use
 ```
 
+### IDE-Specific Notes
+
+| IDE | Agent Instructions | Workflows | MCP Support |
+|-----|-------------------|-----------|-------------|
+| **Antigravity** | `AGENTS.md` + `GEMINI.md` auto-loaded | Full `/slash` command support | ✅ Native |
+| **Cursor** | Reads `.cursorrules` or project instructions | Reference workflows manually | ✅ Native |
+| **VS Code + Copilot** | Reads `.github/copilot-instructions.md` | Reference workflows manually | ✅ Via extensions |
+| **VS Code + Continue** | Reads `.continuerules` | Reference workflows manually | ✅ Native |
+| **Windsurf** | Reads `.windsurfrules` | Reference workflows manually | ✅ Native |
+
+> **Tip:** The `AGENTS.md` content works as universal AI instructions. For IDEs that use a different filename, simply copy or symlink the content to the expected location.
+
 ### First-Time Initialization
 
-After opening the workspace in Antigravity, the AI will automatically:
+After opening the workspace, the AI will automatically:
 
-1. **Load `AGENTS.md` / `GEMINI.md`** as agent instructions
+1. **Load agent instructions** (`AGENTS.md` / `GEMINI.md`)
 2. **Detect GSD workflows** — use `/help` to see all available slash commands
 3. **Rebuild the code review graph** — happens on first interaction with CRG tools
 
-To verify everything works:
-```
-/help          → Shows all GSD slash commands
-/progress      → Shows current roadmap position
-```
-
 ---
 
-## 📦 What Each Plugin Does
+## 📦 What Each System Does
 
 ### 🎯 GSD (Get Shit Done)
 
@@ -139,7 +216,7 @@ SPEC → PLAN → EXECUTE → VERIFY → COMMIT
 
 ### 🧠 Agent Skills
 
-Specialized behaviors that enhance the AI's capabilities:
+Specialized behaviors that enhance any AI assistant's capabilities:
 
 | Skill | What It Does |
 |-------|-------------|
@@ -176,7 +253,7 @@ When you switch to a new laptop:
 # 1. Pull the latest changes
 git pull origin main
 
-# 2. Open in Antigravity IDE
+# 2. Open in your AI IDE
 #    Everything auto-loads. The CRG graph rebuilds on first use.
 
 # 3. Resume your work
@@ -200,7 +277,7 @@ git push origin main
 
 ## ⚙️ MCP Server Configuration
 
-The **code-review-graph** MCP server must be configured in your Antigravity IDE settings. This is a one-time setup per machine.
+The **code-review-graph** MCP server must be configured in your IDE's MCP settings. This is a one-time setup per machine.
 
 Refer to the [code-review-graph documentation](https://github.com/nicobailey/code-review-graph) for installation instructions.
 
@@ -229,10 +306,10 @@ Or manually:
 | Committed (in this repo) | Local Only (per machine) |
 |--------------------------|--------------------------|
 | GSD workflows & skills | `.code-review-graph/graph.db` (auto-regenerated) |
-| Templates & examples | Antigravity app data (`~/.gemini/`) |
-| Project rules & style | Conversation history & brain data |
+| Templates & examples | IDE app data & settings |
+| Project rules & style | Conversation history & chat logs |
 | SPEC, ROADMAP, STATE | Node modules, build artifacts |
-| AGENTS.md / GEMINI.md | IDE-specific settings |
+| AGENTS.md / GEMINI.md | Machine-specific configs |
 
 ---
 
@@ -244,6 +321,7 @@ Feel free to customize this stack for your workflow:
 - **Add skills**: Create folders in `.agents/skills/` with a `SKILL.md`
 - **Modify rules**: Edit `PROJECT_RULES.md` or `GSD-STYLE.md`
 - **Update agent instructions**: Edit `AGENTS.md` / `GEMINI.md`
+- **Add IDE-specific rules**: Create `.cursorrules`, `.windsurfrules`, etc.
 
 After making changes, commit and push — they'll be available on all your machines.
 
@@ -255,4 +333,4 @@ This is a personal workspace configuration by **Siddiq Ahmed**. Use it as inspir
 
 ---
 
-*Built with [Antigravity IDE](https://antigravity.dev) • Powered by GSD, Agent Skills, and Code Review Graph*
+*Crafted with [Claude Opus](https://www.anthropic.com/claude) by [Anthropic](https://www.anthropic.com) • Powered by GSD, Agent Skills, and Code Review Graph*
