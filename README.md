@@ -82,7 +82,11 @@ chmod +x setup.sh && ./setup.sh
 
 Once the global setup is complete, you **never need to clone this repository again.** 
 
-Whenever you want to build a new app (React, Python, Node, etc.), just use the `zg-init` command to instantly inject the AI configuration into your project.
+Whenever you want to build a new app (React, Python, Node, etc.), just use the magic command to instantly inject the AI configuration into your project:
+
+<br>
+<h1 align="center"><code>zg-init</code></h1>
+<br>
 
 ```bash
 # 1. Create a brand new folder for your app
