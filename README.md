@@ -327,9 +327,43 @@ After making changes, commit and push — they'll be available on all your machi
 
 ---
 
+## 🙏 Credits & Attribution
+
+This workspace is built on top of two incredible open-source projects:
+
+### [Code Review Graph](https://github.com/tirth8205/code-review-graph) ⭐ 10.8k
+
+> Local knowledge graph for Claude Code. Builds a persistent map of your codebase so Claude reads only what matters — **6.8× fewer tokens on reviews** and up to **49× on daily coding tasks**.
+
+- **Author:** [@tirth8205](https://github.com/tirth8205) and [42 contributors](https://github.com/tirth8205/code-review-graph/graphs/contributors)
+- **License:** MIT
+- **Languages:** Python (87.9%), TypeScript (11.9%)
+- **Website:** [code-review-graph.com](https://code-review-graph.com)
+
+### [Get Shit Done (GSD)](https://github.com/toonight/get-shit-done-for-antigravity) ⭐ 807
+
+> A structured, AI-assisted project management methodology — meta-prompting system where every file is both implementation and specification.
+
+- **Author:** [@toonight](https://github.com/toonight) (Toonight)
+- **License:** MIT
+- **Languages:** PowerShell (55.4%), Shell (44.6%)
+
+### What Zero Gravity Dev Adds
+
+This repo doesn't modify the original source code of either project. Instead, it:
+- **Combines both systems** into a single portable workspace
+- **Adds token efficiency documentation** and cost-saving strategies
+- **Makes it IDE-agnostic** — works with VS Code, Cursor, Windsurf, and more
+- **Packages everything for portability** — clone once, work from any machine
+
+---
+
 ## 📄 License
 
-This is a personal workspace configuration by **Siddiq Ahmed**. Use it as inspiration for your own AI-powered development setup.
+This workspace configuration is by **Siddiq Ahmed**. The underlying tools are MIT-licensed:
+
+- Code Review Graph — [MIT License](https://github.com/tirth8205/code-review-graph/blob/main/LICENSE)
+- Get Shit Done — [MIT License](https://github.com/toonight/get-shit-done-for-antigravity/blob/main/LICENSE)
 
 ---
 
