@@ -58,6 +58,8 @@ git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
 cd zero-gravity-dev
 ```
 
+*(Note: The Code Review Graph source code is already bundled inside this repository. You do not need to download it separately.)*
+
 <details>
 <summary><b>🪟 Windows Users</b> <i>(Click to expand)</i></summary>
 
