@@ -80,7 +80,7 @@ zero-gravity-dev/
 
 ```bash
 # 1. Clone this repo to your Desktop (or wherever you prefer)
-git clone https://github.com/<your-username>/zero-gravity-dev.git
+git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
 
 # 2. Open the folder in Antigravity IDE
 #    → File > Open Folder > select "zero-gravity-dev"
