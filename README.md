@@ -50,9 +50,14 @@ Get Shit Done — a methodology that turns vague ideas into executable roadmaps.
 
 ## 📦 Prerequisites
 
-Before installing, ensure you have the following installed on your machine:
-- **Python 3.10+** (Required to run the Code Review Graph engine)
+Before installing, ensure you have the following installed on your machine. You can check by running these commands in your terminal:
+
+- **Python 3.10+** (Required for the Code Review Graph engine)
+  - *Check:* Run `python --version` in your terminal.
+  - *Download:* [python.org/downloads](https://www.python.org/downloads/) (Make sure to check "Add Python to PATH" during installation)
 - **Git** (Required for code cloning and graph change detection)
+  - *Check:* Run `git --version` in your terminal.
+  - *Download:* [git-scm.com/downloads](https://git-scm.com/downloads)
 
 ---
 
