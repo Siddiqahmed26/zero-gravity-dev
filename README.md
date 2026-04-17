@@ -67,6 +67,16 @@ npx create-vite@latest ./
 # or just start writing code
 ```
 
+### Option C: The zg-init Command (Fastest)
+
+When you ran `setup.ps1` during installation, it automatically added a `zg-init` command to your system.
+
+To use it:
+1. Open any new, empty folder in your terminal.
+2. Type `zg-init` and press Enter.
+
+This instantly copies the `.gsd` workflows, `AGENTS.md`, and all other AI rules from this root workspace into your new folder in 1 second.
+
 The AI tools work automatically — GSD workflows, agent skills, CRG graph, and MCP server are all active from the parent workspace.
 
 ### Key Commands

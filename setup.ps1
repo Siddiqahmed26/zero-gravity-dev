@@ -85,6 +85,35 @@ else {
     Write-Host "  WARN: Graph build had issues (OK for empty projects)" -ForegroundColor Yellow
 }
 
+# Step 5: Install zg-init command
+Write-Host "[5/5] Installing zg-init terminal command..." -ForegroundColor Yellow
+try {
+    $profileDir = Split-Path -Parent $PROFILE
+    if (-not (Test-Path $profileDir)) { New-Item -ItemType Directory -Path $profileDir -ErrorAction SilentlyContinue | Out-Null }
+    if (-not (Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -ErrorAction SilentlyContinue | Out-Null }
+    
+    $profileContent = Get-Content $PROFILE -ErrorAction SilentlyContinue
+    if ($profileContent -match "function zg-init") {
+        Write-Host "  OK: 'zg-init' already installed" -ForegroundColor Green
+    } else {
+        $function = @"
+
+# Zero Gravity Dev initialization command
+function zg-init {
+    Write-Host "🚀 Initializing Zero Gravity Workspace..." -ForegroundColor Cyan
+    `$source = "$PSScriptRoot"
+    Copy-Item "`$source\.gsd", "`$source\.agents", "`$source\.agent" -Destination . -Recurse -Force -ErrorAction SilentlyContinue
+    Copy-Item "`$source\AGENTS.md", "`$source\GEMINI.md", "`$source\PROJECT_RULES.md", "`$source\GSD-STYLE.md", "`$source\.mcp.json" -Destination . -Force -ErrorAction SilentlyContinue
+    Write-Host "✅ Done! Zero Gravity is fully active in this folder." -ForegroundColor Green
+}
+"@
+        Add-Content -Path $PROFILE -Value $function
+        Write-Host "  OK: 'zg-init' added to PowerShell profile" -ForegroundColor Green
+    }
+} catch {
+    Write-Host "  WARN: Could not install zg-init command automatically" -ForegroundColor DarkYellow
+}
+
 # Done
 Write-Host ""
 Write-Host "====================================================" -ForegroundColor Green
@@ -95,6 +124,7 @@ Write-Host "  Open this folder in your IDE and start building." -ForegroundColor
 Write-Host ""
 Write-Host "  Commands:" -ForegroundColor White
 Write-Host "    /new-project  - Start a new project" -ForegroundColor Gray
+Write-Host "    zg-init       - Use in NEW folders to instantly copy AI config" -ForegroundColor Gray
 Write-Host "    /help         - See all commands" -ForegroundColor Gray
 Write-Host "    /plan         - Plan your project" -ForegroundColor Gray
 Write-Host "    /execute      - Execute a phase" -ForegroundColor Gray
