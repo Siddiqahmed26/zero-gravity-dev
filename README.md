@@ -1,414 +1,185 @@
 <div align="center">
 
-<br/>
+# 🌌 ZERO GRAVITY DEV
 
-# ⚡ Zero Gravity Dev
+**The Ultimate AI-Powered Development Environment.**
 
-### The Ultimate AI-Powered Development Workspace
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&color=2ea44f)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen.svg?style=for-the-badge)](https://github.com/Siddiqahmed26/zero-gravity-dev)
 
-<br/>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
-[![Stars](https://img.shields.io/github/stars/Siddiqahmed26/zero-gravity-dev?style=for-the-badge&color=gold)](https://github.com/Siddiqahmed26/zero-gravity-dev)
+> *Clone → Setup → Build.* Your AI tools, agent skills, and project management — unified into one ultra-fast, portable workspace. Never configure an AI IDE from scratch again.
 
 <br/>
 
-**Clone → Setup → Build.** Your AI tools, agent skills, and project management — all in one portable workspace.
-
-Works with **Cursor** · **VS Code** · **Windsurf** · **Antigravity** · **Claude Code**
+**[ Cursor ]** &nbsp; · &nbsp; **[ Windsurf ]** &nbsp; · &nbsp; **[ Antigravity ]** &nbsp; · &nbsp; **[ VS Code ]**
 
 <br/>
-
----
 
 </div>
 
-<br/>
-
-## 🤔 Why Does This Exist?
-
-Every time you start a new project or switch machines, you lose hours:
-
-- ❌ Re-configuring your AI assistant's behavior from scratch
-- ❌ Re-installing MCP servers and tools
-- ❌ Losing your project management structure
-- ❌ Burning thousands of tokens on context the AI already understood yesterday
-- ❌ No consistent workflow — every project feels different
-
-**Zero Gravity Dev solves all of this.**
-
-It's a single, portable workspace that carries your entire AI development environment with you. Clone it once, run one command, and every tool — every workflow — every optimization — is instantly active. On any machine. In any IDE.
-
-<br/>
-
 ---
 
-<br/>
+## 🚀 The Zero Gravity Architecture
 
-## 🧬 The Three Pillars
+Every time you start a new project or switch machines, you lose hours configuring AI behavior, MCP servers, and project tracking. **Zero Gravity Dev solves this by unifying three state-of-the-art open-source systems:**
 
-Zero Gravity Dev combines three powerful open-source systems into one unified stack:
-
-<br/>
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-### 🔬 Code Review Graph
-
-**Your AI's Memory**
-
-Builds a persistent knowledge graph of your entire codebase using Tree-sitter parsing. Instead of re-reading files every time, your AI *queries* the graph.
-
-**6.8× fewer tokens** on code reviews
-**Up to 49× savings** on daily coding
-
-[View Project →](https://github.com/tirth8205/code-review-graph)
-
-</td>
-<td width="33%" align="center">
-
-### 📋 GSD Framework
-
-**Structured Execution**
-
-Get Shit Done — a methodology that turns vague ideas into executable, phased roadmaps. Every task has a spec, a plan, and proof of completion.
-
-**27 slash commands**
-**Zero guesswork**
-
-[View Project →](https://github.com/toonight/get-shit-done-for-antigravity)
-
-</td>
-<td width="33%" align="center">
-
-### 🧠 Agent Skills
-
-**11 Specialized Behaviors**
-
-Pre-configured AI behaviors that enforce context discipline, smart debugging, token budgeting, and empirical validation across every task.
-
-**Automatic activation**
-**No configuration needed**
-
-</td>
-</tr>
-</table>
-
-<br/>
-
----
-
-<br/>
-
-## 🚀 Getting Started
-
-### Step 1 — Clone
-
-```bash
-git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
-cd zero-gravity-dev
+```mermaid
+graph LR
+    User[💻 Developer] -->|1. Runs zg-init| ZG[🌌 Zero Gravity Workspace]
+    
+    subgraph The Core Engine
+        ZG --> CRG[(🔬 Code Review Graph)]
+        ZG --> Skills[🧠 11 Agent Skills]
+        ZG --> GSD[📋 GSD Workflows]
+    end
+    
+    CRG -.->|Builds AST Graph| Skills
+    Skills -.->|Context-Aware Execution| GSD
+    GSD -.->|Structured Code Delivery| User
+    
+    style User fill:#1f2328,stroke:#d0d7de,stroke-width:2px,color:#fff
+    style ZG fill:#2e1065,stroke:#8b5cf6,stroke-width:2px,color:#fff
+    style CRG fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+    style Skills fill:#701a75,stroke:#d946ef,stroke-width:2px,color:#fff
+    style GSD fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff
 ```
 
-### Step 2 — Run Setup
+### 1. 🔬 Code Review Graph (Your AI's Memory)
+Builds a persistent AST knowledge graph of your entire codebase. Instead of burning context windows re-reading files, your AI *queries* the graph. Result: **6.8× fewer tokens** on reviews, up to **49× savings** on daily coding.
 
-<table>
-<tr>
-<td>
+### 2. 📋 GSD Framework (Structured Execution)
+Get Shit Done — a methodology that turns vague ideas into executable roadmaps. Every task has a spec, a plan, and proof of completion via **27 slash commands**.
 
-**🪟 Windows (PowerShell)**
+### 3. 🧠 Agent Skills (Behavioral Overrides)
+**11 pre-configured behaviors** that enforce context discipline, token budgeting, systematic debugging, and empirical validation. Active instantly, zero configuration.
+
+---
+
+## ⚡ 30-Second Global Installation
+
+Run this **once** on your machine to install the core graph engine and terminal tools.
+
+```bash
+# 1. Clone the master workspace
+git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
+cd zero-gravity-dev
+
+# 2. Run the automated installer
+```
+<details>
+<summary><b>🪟 Windows Users</b> <i>(Click to expand)</i></summary>
+
 ```powershell
 .\setup.ps1
 ```
+</details>
 
-</td>
-<td>
+<details>
+<summary><b>🍎 macOS / 🐧 Linux Users</b> <i>(Click to expand)</i></summary>
 
-**🍎 macOS / 🐧 Linux**
 ```bash
 chmod +x setup.sh && ./setup.sh
 ```
-
-</td>
-</tr>
-</table>
-
-The setup script will:
-1. ✅ Verify Python 3.10+ and Git are installed
-2. ✅ Install the Code Review Graph CLI globally
-3. ✅ Build the initial knowledge graph
-4. ✅ Register the `zg-init` terminal command on your system
-
-### Step 3 — Open & Build
-
-Open the folder in your AI-powered IDE. **Everything is ready.** Tell your AI:
-
-```
-/new-project
-```
-
-<br/>
+</details>
 
 ---
 
-<br/>
+## 🌌 The `zg-init` Workflow
 
-## ⚡ The `zg-init` Command — Start Any Project in 1 Second
+Once installed, you never need to clone this repository again. We've injected a permanent `zg-init` command into your system. 
 
-After running setup once, you get a **permanent terminal command** called `zg-init`.
+Whenever you start a new project:
 
-Here's the workflow for every new project you'll ever create:
-
+```mermaid
+sequenceDiagram
+    participant D as Developer
+    participant T as Terminal
+    participant W as Workspace
+    
+    D->>T: mkdir new-app && cd new-app
+    D->>T: zg-init
+    T->>W: Injects AGENTS.md, .mcp.json, .gsd/
+    W-->>D: Workspace is now AI-Ready 🚀
 ```
-┌─────────────────────────────────────────────────┐
-│                                                 │
-│   1. Create a new folder anywhere               │
-│   2. Open terminal in that folder               │
-│   3. Type:  zg-init                             │
-│   4. Done. Full AI workspace is active.         │
-│                                                 │
-└─────────────────────────────────────────────────┘
-```
 
-That's it. All your `.gsd` workflows, `AGENTS.md` instructions, agent skills, and MCP configuration are instantly copied. No cloning. No installing. **One second.**
-
-<br/>
+Open the folder in your IDE, and tell your AI: `/new-project`.
 
 ---
 
-<br/>
+## 📈 Real-World Token Savings
 
-## 🧠 The 11 Agent Skills — Deep Dive
+Zero Gravity Dev is aggressively optimized to eliminate token waste and API costs.
 
-These aren't plugins you install — they're **behavioral instructions** baked into `AGENTS.md` that shape how your AI thinks, plans, and executes. They activate automatically.
-
-<br/>
-
-<table>
-<tr>
-<td width="50%">
-
-### 🗺️ Codebase Mapper
-Analyzes your project's structure, identifies patterns, and surfaces technical debt — so your AI understands the architecture before writing a single line.
-
-### 🗜️ Context Compressor
-After reading a file, the AI summarizes it and references the summary instead of re-reading the full file. Drastically reduces token burn on long sessions.
-
-### 🔍 Context Fetch
-**Search before read.** The AI greps for relevant snippets before loading entire files. A 500-line file becomes a 10-line snippet.
-
-### 📊 Context Health Monitor
-Tracks how much context the AI is carrying. Triggers automatic state dumps before quality degrades from context overflow.
-
-### 🐛 Debugger
-Systematic debugging with persistent state. Tracks hypotheses, evidence, and eliminated causes across multiple attempts.
-
-### ✅ Empirical Validation
-No "trust me, it works." Every claim must be backed by proof — test output, screenshots, or measurable results.
-
-</td>
-<td width="50%">
-
-### ⚙️ Executor
-The execution engine. Follows GSD plans with atomic commits, handles deviations, runs checkpoints, and manages state transitions.
-
-### 🔎 Plan Checker
-Validates plans *before* execution. Catches missing dependencies, impossible orderings, and scope issues early.
-
-### 📐 Planner
-Creates executable phase plans with task breakdowns, dependency graphs, and goal-backward verification to ensure nothing is missed.
-
-### 💲 Token Budget
-Estimates the token cost of a plan before executing it. Warns you if a task will overflow your context window or burn excessive tokens.
-
-### 🏁 Verifier
-Validates completed work against the original spec. Ensures every requirement is met with evidence, not assumptions.
-
-</td>
-</tr>
-</table>
-
-<br/>
+| Scenario | Standard AI IDE | Zero Gravity | Net Reduction |
+|:---------|:----------------|:-------------|:--------------|
+| **Code review (10 files)** | ~50,000 tokens | ~5,000 tokens | <kbd>🟢 90%</kbd> |
+| **Context: `auth.ts` (500 loc)** | ~2,000 tokens | ~100 tokens | <kbd>🟢 95%</kbd> |
+| **Find all callers of function** | ~10,000 tokens | ~300 tokens | <kbd>🟢 97%</kbd> |
+| **Systematic Debug Session** | ~30,000 tokens | ~8,000 tokens | <kbd>🟢 73%</kbd> |
 
 ---
 
-<br/>
+## 🛠️ Advanced Tooling Reference
 
-## 💰 Token Savings — Real Numbers
+<details>
+<summary><b>🧠 View All 11 Agent Skills</b></summary>
 
-AI models charge per token. This stack is designed to **eliminate waste** at every level.
+These instructions are baked into `AGENTS.md` and activate automatically to shape how your AI thinks and executes.
 
-<br/>
+* **🗺️ Codebase Mapper:** Analyzes your project's structure before writing code.
+* **🗜️ Context Compressor:** Summarizes files and references summaries instead of re-reading full files.
+* **🔍 Context Fetch:** Search-before-read protocol. Greps for snippets before loading massive files.
+* **📊 Context Health Monitor:** Triggers automatic state dumps before context degradation.
+* **🐛 Debugger:** Systematic debugging tracking hypotheses and eliminated causes.
+* **✅ Empirical Validation:** Requires test output/screenshots before marking tasks complete.
+* **⚙️ Executor:** Follows GSD plans with atomic commits and checkpoint protocols.
+* **🔎 Plan Checker:** Validates plans *before* execution to catch scope issues early.
+* **📐 Planner:** Creates phase plans with dependency graphs and goal-backward verification.
+* **💲 Token Budget:** Estimates token cost of plans before execution.
+* **🏁 Verifier:** Validates completed work against the original specification.
 
-| Scenario | Without Zero Gravity | With Zero Gravity | Savings |
-|:---------|:---------------------|:------------------|:--------|
-| Code review (10 files) | ~50,000 tokens | ~5,000 tokens | **🟢 90%** |
-| Read `auth.ts` (500 lines) | ~2,000 tokens | ~100 tokens | **🟢 95%** |
-| Find all callers of a function | ~10,000 tokens | ~300 tokens | **🟢 97%** |
-| Find test coverage | ~5,000 tokens | ~100 tokens | **🟢 98%** |
-| Debug session | ~30,000 tokens | ~8,000 tokens | **🟢 73%** |
-| Resume after a break | ~20,000 tokens | ~2,000 tokens | **🟢 90%** |
+</details>
 
-<br/>
-
----
-
-<br/>
-
-## 🎮 Command Reference
+<details>
+<summary><b>💻 View All GSD Slash Commands</b></summary>
 
 Type these to your AI inside any initialized workspace:
 
-<br/>
+**🏗️ Setup & Planning**
+* `/new-project` - Full guided project setup
+* `/plan` - Decompose requirements into executable phases
+* `/research-phase` - Deep-dive research before committing
 
-| Category | Command | What It Does |
-|:---------|:--------|:-------------|
-| **🏗️ Setup** | `/new-project` | Full guided project setup with spec & roadmap |
-| **📐 Planning** | `/plan` | Decompose requirements into executable phases |
-| | `/research-phase` | Deep-dive research before committing to a plan |
-| **⚙️ Execution** | `/execute` | Execute a specific phase with focused context |
-| | `/sprint` | Rapid execution mode for small tasks |
-| **✅ Verification** | `/verify` | Validate work with empirical evidence |
-| | `/audit-milestone` | Audit a milestone for completeness |
-| **🐛 Debugging** | `/debug` | Systematic debugging with persistent state |
-| **📊 Status** | `/progress` | Show current position in roadmap |
-| | `/map` | Visualize codebase structure |
-| **💾 Session** | `/pause` | Save full AI state for later |
-| | `/resume` | Restore context from previous session |
-| **❓ Help** | `/help` | Show all 27 available commands |
+**⚙️ Execution & Verification**
+* `/execute` - Execute a phase with focused context
+* `/sprint` - Rapid execution mode
+* `/verify` - Validate work with empirical evidence
+* `/audit-milestone` - Check a milestone for completeness
 
-<br/>
+**🐛 Operations**
+* `/debug` - Systematic debugging with persistent state
+* `/progress` - Show current position in roadmap
+* `/pause` - Save full AI state for later
+* `/resume` - Restore context from previous session
+* `/help` - Show all 27 available commands
 
----
-
-<br/>
-
-## 🔄 Switch Machines in 30 Seconds
-
-**Leaving your current machine:**
-```bash
-/pause                                              # Save AI state
-git add -A && git commit -m "save state" && git push
-```
-
-**On the new machine:**
-```bash
-git clone https://github.com/Siddiqahmed26/zero-gravity-dev.git
-cd zero-gravity-dev
-.\setup.ps1                                         # One command setup
-/resume                                             # Pick up exactly where you left off
-```
-
-<br/>
+</details>
 
 ---
 
-<br/>
+## 🌐 Open Source Attribution
 
-## 📁 Project Structure
+This master environment orchestrates two phenomenal open-source projects:
 
-```
-zero-gravity-dev/
-│
-├── setup.ps1 / setup.sh          # ⚡ One-command setup (Windows / macOS / Linux)
-├── .mcp.json                      # MCP server config (auto-discovered by IDEs)
-├── AGENTS.md                      # Universal AI agent instructions
-├── GEMINI.md                      # Gemini-specific AI instructions
-├── GSD-STYLE.md                   # Writing style & conventions
-├── PROJECT_RULES.md               # GSD methodology rules
-│
-├── .agent/workflows/              # 📋 27 GSD slash commands
-│
-├── .agents/skills/                # 🧠 11 specialized AI agent skills
-│   ├── codebase-mapper/           #    Structure & tech debt analysis
-│   ├── context-compressor/        #    Token-efficient context management
-│   ├── context-fetch/             #    Search-first file reading
-│   ├── context-health-monitor/    #    Context quality monitoring
-│   ├── debugger/                  #    Systematic debugging
-│   ├── empirical-validation/      #    Proof-based verification
-│   ├── executor/                  #    Plan execution engine
-│   ├── plan-checker/              #    Pre-execution plan validation
-│   ├── planner/                   #    Phase plan creation
-│   ├── token-budget/              #    Token cost estimation
-│   └── verifier/                  #    Spec compliance validation
-│
-├── .gsd/                          # 📋 GSD project state
-│   ├── SPEC.md                    #    Project specification
-│   ├── ROADMAP.md                 #    Phase-based roadmap
-│   └── STATE.md                   #    Session memory
-│
-└── code-review-graph/             # 🔬 CRG source (Python)
-```
+* **[Code Review Graph](https://github.com/tirth8205/code-review-graph):** Created by [@tirth8205](https://github.com/tirth8205) and 42 contributors. (MIT License).
+* **[Get Shit Done (GSD)](https://github.com/toonight/get-shit-done-for-antigravity):** Created by [@toonight](https://github.com/toonight). (MIT License).
 
 <br/>
-
----
-
-<br/>
-
-## 🖥️ IDE Compatibility
-
-| IDE | Agent Instructions | GSD Workflows | CRG (MCP) |
-|:----|:-------------------|:--------------|:-----------|
-| **Cursor** | `AGENTS.md` | `/slash` commands | `.mcp.json` auto-discovered ✅ |
-| **Windsurf** | `.windsurfrules` | Reference manually | `.mcp.json` auto-discovered ✅ |
-| **Antigravity** | `AGENTS.md` auto-loaded | Full support ✅ | Auto-detected ✅ |
-| **Claude Code** | `CLAUDE.md` | Reference manually | `.mcp.json` auto-discovered ✅ |
-| **VS Code + Copilot** | `.github/copilot-instructions.md` | Reference manually | Via extensions |
-
-> **Tip:** `AGENTS.md` works as universal AI instructions. For IDEs that expect a different filename, copy or symlink the content.
-
-<br/>
-
----
-
-<br/>
-
-## 🙏 Credits & Attribution
-
-Built on top of two incredible open-source projects:
-
-<table>
-<tr>
-<td width="50%">
-
-### [Code Review Graph](https://github.com/tirth8205/code-review-graph) ⭐ 10.8k
-
-> Local knowledge graph — **6.8× fewer tokens on reviews**, up to **49× on daily coding**.
-
-- **Author:** [@tirth8205](https://github.com/tirth8205) and [42 contributors](https://github.com/tirth8205/code-review-graph/graphs/contributors)
-- **License:** [MIT](https://github.com/tirth8205/code-review-graph/blob/main/LICENSE)
-- **Website:** [code-review-graph.com](https://code-review-graph.com)
-
-</td>
-<td width="50%">
-
-### [Get Shit Done (GSD)](https://github.com/toonight/get-shit-done-for-antigravity) ⭐ 807
-
-> AI-assisted project management — every file is both implementation and specification.
-
-- **Author:** [@toonight](https://github.com/toonight)
-- **License:** [MIT](https://github.com/toonight/get-shit-done-for-antigravity/blob/main/LICENSE)
-
-</td>
-</tr>
-</table>
-
-<br/>
-
----
 
 <div align="center">
 
-<br/>
-
-**Built with ❤️ by [Siddiq Ahmed](https://github.com/Siddiqahmed26) for the AI Development Community**
-
+**Built with ❤️ for the Global Developer Community.** <br/>
 *Stop configuring. Start building.*
-
-<br/>
 
 </div>
