@@ -15,7 +15,7 @@
 <br/>
 
 <h2>🚀 Clone → Setup → Build.</h2>
-<p>Your AI tools, agent skills, and project management — unified into one ultra-fast, portable workspace.</p>
+<p><kbd>Your AI tools, agent skills, and project management — unified into one ultra-fast, portable workspace.</kbd></p>
 <p><b>Never configure an AI IDE from scratch again.</b></p>
 
 </div>
