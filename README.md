@@ -48,6 +48,14 @@ Get Shit Done — a methodology that turns vague ideas into executable roadmaps.
 
 ---
 
+## 📦 Prerequisites
+
+Before installing, ensure you have the following installed on your machine:
+- **Python 3.10+** (Required to run the Code Review Graph engine)
+- **Git** (Required for code cloning and graph change detection)
+
+---
+
 ## ⚡ Step 1: One-Time Global Setup
 
 Run this **exactly once** on your machine to install the global tools and register the `zg-init` command.
