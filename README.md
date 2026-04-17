@@ -1,6 +1,8 @@
-# 🚀 Antigravity Ultimate Stack
+# 🚀 Zero Gravity Dev
 
 > **A portable AI-powered development workspace** — clone it on any machine, open it in [Antigravity](https://antigravity.dev), and start building with your full AI workflow instantly.
+>
+> *By Siddiq Ahmed*
 
 ---
 
@@ -21,7 +23,7 @@ This repository is a **pre-configured AI workspace** designed for the [Antigravi
 ## 🏗️ Repository Structure
 
 ```
-antigravity-ultimate-stack/
+zero-gravity-dev/
 │
 ├── README.md                  # ← You are here
 ├── .gitignore                 # Git ignore rules
@@ -78,10 +80,10 @@ antigravity-ultimate-stack/
 
 ```bash
 # 1. Clone this repo to your Desktop (or wherever you prefer)
-git clone https://github.com/<your-username>/antigravity-ultimate-stack.git
+git clone https://github.com/<your-username>/zero-gravity-dev.git
 
 # 2. Open the folder in Antigravity IDE
-#    → File > Open Folder > select "antigravity-ultimate-stack"
+#    → File > Open Folder > select "zero-gravity-dev"
 
 # 3. The workspace will auto-detect:
 #    - GSD workflows (available as /slash commands)
@@ -249,7 +251,7 @@ After making changes, commit and push — they'll be available on all your machi
 
 ## 📄 License
 
-This is a personal workspace configuration. Use it as inspiration for your own AI-powered development setup.
+This is a personal workspace configuration by **Siddiq Ahmed**. Use it as inspiration for your own AI-powered development setup.
 
 ---
 
