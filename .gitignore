@@ -1,0 +1,48 @@
+# ==============================================
+# Antigravity Ultimate Stack - .gitignore
+# ==============================================
+
+# --- Code Review Graph (auto-generated DB) ---
+.code-review-graph/graph.db
+
+# --- OS files ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# --- Editor/IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Node (if any project uses it) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Python (if any project uses it) ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+env/
+venv/
+
+# --- Logs ---
+*.log
+
+# --- Antigravity App Data (user-specific, not portable) ---
+# Brain data, conversation logs, and knowledge items are stored
+# in the Antigravity app data directory (~/.gemini/antigravity/),
+# NOT in this repo. No need to gitignore them here.
